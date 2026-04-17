@@ -5,7 +5,6 @@
 Current release artifacts are published on GitHub Releases:
 
 - `spaces-publisher-vX.Y.Z-linux-amd64.tar.gz`
-- `spaces-publisher-vX.Y.Z-windows-amd64.zip`
 - `spaces-publisher-vX.Y.Z-darwin-arm64.tar.gz`
 - `checksums.txt`
 
@@ -28,7 +27,7 @@ go install github.com/pirate-social-club/spaces-publisher@latest
 
 ## Windows
 
-On Windows, download the `windows-amd64.zip` release asset and run `spaces-publisher.exe`.
+Windows is not released yet. The current blocker is an upstream `libveritas-go` Windows linker flag issue.
 
 ## macOS
 

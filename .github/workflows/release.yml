@@ -20,11 +20,6 @@ jobs:
             goarch: amd64
             asset_suffix: linux-amd64
             archive_ext: tar.gz
-          - runner: windows-latest
-            goos: windows
-            goarch: amd64
-            asset_suffix: windows-amd64
-            archive_ext: zip
           - runner: macos-14
             goos: darwin
             goarch: arm64

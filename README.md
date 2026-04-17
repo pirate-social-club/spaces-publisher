@@ -46,7 +46,6 @@ go build ./...
 Tagged releases publish archives for:
 
 - Linux `amd64`
-- Windows `amd64`
 - macOS `arm64`
 
 Each release also includes a `checksums.txt` file.
@@ -80,8 +79,9 @@ spaces-publisher inspect-wallet @pirate
 ### Platform notes
 
 - Linux builds are produced on Linux runners.
-- Windows builds are produced on native Windows runners.
 - macOS builds are currently Apple Silicon only because upstream `libveritas-go` currently ships `darwin-arm64` artifacts but not `darwin-amd64`.
+
+Windows is not released yet because upstream `libveritas-go v0.1.1` still emits an invalid Windows `#cgo LDFLAGS` path during native builds.
 
 This repo does not use Linux cross-compilation for Windows/macOS because `libveritas-go` uses cgo and native platform libraries.
 

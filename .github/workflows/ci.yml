@@ -11,7 +11,6 @@ jobs:
       matrix:
         include:
           - runner: ubuntu-latest
-          - runner: windows-latest
           - runner: macos-14
     runs-on: ${{ matrix.runner }}
     steps:
