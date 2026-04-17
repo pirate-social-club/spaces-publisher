@@ -30,13 +30,13 @@ It can:
 ### Go install
 
 ```bash
-go install github.com/technohippi3/spaces-publisher@latest
+go install github.com/pirate-social-club/spaces-publisher@latest
 ```
 
 ### Build from source
 
 ```bash
-git clone https://github.com/technohippi3/spaces-publisher
+git clone https://github.com/pirate-social-club/spaces-publisher
 cd spaces-publisher
 go build ./...
 ```
@@ -46,6 +46,8 @@ go build ./...
 Tagged releases publish archives for:
 
 - Linux `amd64`
+- Windows `amd64`
+- macOS `arm64`
 
 Each release also includes a `checksums.txt` file.
 
@@ -75,15 +77,13 @@ export SPACES_WALLET_EXPORT=~/safe/pirate-wallet.json
 spaces-publisher inspect-wallet @pirate
 ```
 
-### Windows
+### Platform notes
 
-Windows is not released yet.
+- Linux builds are produced on Linux runners.
+- Windows builds are produced on native Windows runners.
+- macOS builds are currently Apple Silicon only because upstream `libveritas-go` currently ships `darwin-arm64` artifacts but not `darwin-amd64`.
 
-Current blocker:
-
-- `libveritas-go` is constrained to Linux in the current upstream build path, so native Windows and macOS binaries do not compile yet.
-
-When that upstream constraint is removed, this repo can expand the release matrix to include Windows and macOS without changing the CLI UX.
+This repo does not use Linux cross-compilation for Windows/macOS because `libveritas-go` uses cgo and native platform libraries.
 
 ## How it signs
 

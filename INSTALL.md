@@ -5,24 +5,34 @@
 Current release artifacts are published on GitHub Releases:
 
 - `spaces-publisher-vX.Y.Z-linux-amd64.tar.gz`
+- `spaces-publisher-vX.Y.Z-windows-amd64.zip`
+- `spaces-publisher-vX.Y.Z-darwin-arm64.tar.gz`
 - `checksums.txt`
 
 Example:
 
 ```bash
-curl -LO https://github.com/pirate-social-club/spaces-publisher/releases/latest/download/spaces-publisher-v0.1.3-linux-amd64.tar.gz
+curl -LO https://github.com/pirate-social-club/spaces-publisher/releases/latest/download/spaces-publisher-v0.1.4-linux-amd64.tar.gz
 curl -LO https://github.com/pirate-social-club/spaces-publisher/releases/latest/download/checksums.txt
 sha256sum -c checksums.txt --ignore-missing
-tar -xzf spaces-publisher-v0.1.3-linux-amd64.tar.gz
-cd spaces-publisher-v0.1.3-linux-amd64
+tar -xzf spaces-publisher-v0.1.4-linux-amd64.tar.gz
+cd spaces-publisher-v0.1.4-linux-amd64
 ./spaces-publisher --help
 ```
 
 ## Go install
 
 ```bash
-go install github.com/technohippi3/spaces-publisher@latest
+go install github.com/pirate-social-club/spaces-publisher@latest
 ```
+
+## Windows
+
+On Windows, download the `windows-amd64.zip` release asset and run `spaces-publisher.exe`.
+
+## macOS
+
+Current macOS release assets target Apple Silicon (`darwin-arm64`).
 
 ## First run
 

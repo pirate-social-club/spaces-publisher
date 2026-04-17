@@ -5,17 +5,32 @@ on:
   pull_request:
 
 jobs:
-  go:
-    runs-on: ubuntu-latest
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-latest
+          - runner: windows-latest
+          - runner: macos-14
+    runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
           go-version: '1.25'
       - name: Format check
+        if: runner.os == 'Linux'
         run: |
           test -z "$(gofmt -l .)"
       - name: Build
         run: go build ./...
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
       - name: Test
         run: go test ./...
