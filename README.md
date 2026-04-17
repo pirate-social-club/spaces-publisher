@@ -1,5 +1,7 @@
 # spaces-publisher
 
+[Latest release](https://github.com/pirate-social-club/spaces-publisher/releases/latest) | [Install guide](./INSTALL.md)
+
 `spaces-publisher` is a standalone CLI for publishing native Spaces website records to Fabric.
 
 It is designed for Space holders who want to keep wallet material local while publishing signed SIP-7 `Txt` records such as:
