@@ -39,6 +39,27 @@ cd spaces-publisher
 go build ./...
 ```
 
+### Prebuilt binaries
+
+Tagged releases publish archives for:
+
+- Linux `amd64`
+- Linux `arm64`
+- macOS `amd64`
+- macOS `arm64`
+- Windows `amd64`
+
+Each release also includes a `checksums.txt` file.
+
+## CI / releases
+
+This repo uses standard GitHub Actions for CI and tagged releases.
+
+- `ci.yml` runs format check, build, and test on pushes and PRs
+- `release.yml` builds cross-platform binaries on `v*` tags and uploads them to GitHub Releases
+
+If you use Blacksmith as your GitHub Actions runner backend, you can swap the `runs-on` labels in the workflow files without changing the release logic.
+
 ## Usage
 
 ```bash
@@ -55,6 +76,20 @@ You can also set the wallet export once:
 export SPACES_WALLET_EXPORT=~/safe/pirate-wallet.json
 spaces-publisher inspect-wallet @pirate
 ```
+
+### Windows
+
+Windows builds are included in tagged releases as `spaces-publisher.exe`.
+
+Typical PowerShell flow:
+
+```powershell
+$env:SPACES_WALLET_EXPORT="$HOME\safe\pirate-wallet.json"
+.\spaces-publisher.exe inspect-wallet @pirate
+.\spaces-publisher.exe publish @pirate --web https://pirate.sc/ --dry-run
+```
+
+The signing model is the same as other platforms: keep the wallet export local and never move it to a server.
 
 ## How it signs
 
