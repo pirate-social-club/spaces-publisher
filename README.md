@@ -44,10 +44,6 @@ go build ./...
 Tagged releases publish archives for:
 
 - Linux `amd64`
-- Linux `arm64`
-- macOS `amd64`
-- macOS `arm64`
-- Windows `amd64`
 
 Each release also includes a `checksums.txt` file.
 
@@ -79,17 +75,13 @@ spaces-publisher inspect-wallet @pirate
 
 ### Windows
 
-Windows builds are included in tagged releases as `spaces-publisher.exe`.
+Windows is not released yet.
 
-Typical PowerShell flow:
+Current blocker:
 
-```powershell
-$env:SPACES_WALLET_EXPORT="$HOME\safe\pirate-wallet.json"
-.\spaces-publisher.exe inspect-wallet @pirate
-.\spaces-publisher.exe publish @pirate --web https://pirate.sc/ --dry-run
-```
+- `libveritas-go` is constrained to Linux in the current upstream build path, so native Windows and macOS binaries do not compile yet.
 
-The signing model is the same as other platforms: keep the wallet export local and never move it to a server.
+When that upstream constraint is removed, this repo can expand the release matrix to include Windows and macOS without changing the CLI UX.
 
 ## How it signs
 

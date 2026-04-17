@@ -17,22 +17,6 @@ jobs:
             goarch: amd64
             asset_suffix: linux-amd64
             archive_ext: tar.gz
-          - goos: linux
-            goarch: arm64
-            asset_suffix: linux-arm64
-            archive_ext: tar.gz
-          - goos: darwin
-            goarch: amd64
-            asset_suffix: darwin-amd64
-            archive_ext: tar.gz
-          - goos: darwin
-            goarch: arm64
-            asset_suffix: darwin-arm64
-            archive_ext: tar.gz
-          - goos: windows
-            goarch: amd64
-            asset_suffix: windows-amd64
-            archive_ext: zip
 
     steps:
       - uses: actions/checkout@v4

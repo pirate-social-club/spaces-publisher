@@ -21,8 +21,8 @@ type EpochHint struct {
 }
 
 type Query struct {
-	Space    string     `json:"space"`
-	Handles  []string   `json:"handles"`
+	Space     string     `json:"space"`
+	Handles   []string   `json:"handles"`
 	EpochHint *EpochHint `json:"epoch_hint,omitempty"`
 }
 
@@ -87,7 +87,7 @@ const (
 type trustKind int
 
 const (
-	trustKindObserved    trustKind = iota
+	trustKindObserved trustKind = iota
 	trustKindTrusted
 	trustKindSemiTrusted
 )
@@ -157,9 +157,9 @@ func New() *Fabric {
 	}
 }
 
-func (f *Fabric) SetDevMode(v bool)     { f.devMode = v }
-func (f *Fabric) SetPreferLatest(v bool) { f.preferLatest = v }
-func (f *Fabric) SetSeeds(seeds []string)  { f.seeds = seeds }
+func (f *Fabric) SetDevMode(v bool)       { f.devMode = v }
+func (f *Fabric) SetPreferLatest(v bool)  { f.preferLatest = v }
+func (f *Fabric) SetSeeds(seeds []string) { f.seeds = seeds }
 
 func (f *Fabric) Relays() []string { return f.pool.URLs() }
 
